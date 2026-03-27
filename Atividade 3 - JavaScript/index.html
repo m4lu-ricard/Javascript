@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 2 - DOM</title>
+</head>
+<body>
+    <h1>Atividade DOM</h1>
+
+    <section>
+        <h2>Contador de Cliques</h2>
+        <button id="btn-increment">Incrementar</button>
+        <button id="btn-decrement">Decrementar</button>
+        <p>Cliques: <span id="contador-display">0</span></p>
+    </section>
+
+    <section>
+        <h2>Texto Dinâmico</h2>
+        <input type="text" id="input-texto" placeholder="Digite uma mensagem e aperte Enter">
+        <p>Caracteres (sem espaços): <span id="char-count">0</span></p>
+        <div id="paragrafos-container"></div>
+    </section>
+
+    <section>
+        <h2>Adicionar Novo Item</h2>
+        <input type="text" id="input-item" placeholder="Nome do item para a lista">
+        <select id="tipo-lista">
+            <option value="ul">Lista Não Ordenada (Marcadores)</option>
+            <option value="ol">Lista Ordenada (Números)</option>
+        </select>
+        <button id="btn-adicionar-item">Adicionar à Lista</button>
+        <div id="listas-container"></div>
+    </section>
+
+    <hr>
+    <button id="btn-reset">Resetar Tudo</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
