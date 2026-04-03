@@ -6,30 +6,33 @@
     <title>Calculadora de Abastecimento</title>
 </head>
 <body>
-    <h1>Calculadora de Abastecimento</h1>
-    
+    <h1>Funções</h1>
+    <h2>Calculadora de Abastecimento</h2>
+    <p>Tipo de combustível</p>
     <ul>
         <li>Gasolina: R$ 6.79</li>
         <li>Etanol: R$ 5.40</li>
         <li>Diesel: R$ 6.20</li>
     </ul>
-
+    
     <form id="formularioCombustivel">
         <label for="combustivel">Tipo Combustível</label>
-        <select id="combustivel">
+        <select name="combustivel" id="combustivel">
             <option value="">Escolha uma opção</option>
             <option value="gasolina">Gasolina</option>
             <option value="etanol">Etanol</option>
             <option value="diesel">Diesel</option>
         </select>
-
+        
         <label for="litros">Quantidade de litros</label>
         <input type="number" step="0.1" min="0" id="litros">
-    </form>
 
+        <button type="button" id="btnCalcular">Calcular</button>
+    </form>
+    
     <h2>Resultado</h2>
     <p id="resultado"></p>
-
+    
     <script src="script.js"></script>
 </body>
 </html>

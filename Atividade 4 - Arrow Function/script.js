@@ -5,17 +5,17 @@ const precos = {
 };
 
 const formatarMoeda = (valor) => {
-    return valor.toLocaleString('pt-BR', {
-        style: 'currency',
-        currency: 'BRL'
+    return "R$ " + valor.toLocaleString('pt-BR', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
     });
 };
 
 const calcularAbastecimento = (precoCombustivel, litros) => {
     const displayResultado = document.getElementById("resultado");
     
-    if (isNaN(litros) || litros <= 0) {
-        displayResultado.textContent = "Insira um valor válido e positivo.";
+    if (litros <= 0 || isNaN(litros)) {
+        displayResultado.textContent = "Valores negativos ou inválidos não são permitidos.";
         return;
     }
 
@@ -26,30 +26,41 @@ const calcularAbastecimento = (precoCombustivel, litros) => {
 const atualizarValor = () => {
     const tipo = document.getElementById("combustivel").value;
     const litrosInput = document.getElementById("litros").value;
-    const litros = parseFloat(litrosInput);
 
-    const precoPorLitro = precos[tipo];
-
-    if (!precoPorLitro) {
-        alert("Escolha uma opção de combustível!");
+    if (tipo === "") {
+        alert("Por favor, selecione um tipo de combustível.");
+        document.getElementById("resultado").textContent = "";
         return;
     }
 
     if (litrosInput === "") {
-        alert("O campo litros está vazio!");
+        alert("O campo de litros não pode estar vazio.");
+        document.getElementById("resultado").textContent = "";
         return;
     }
+
+    const litros = parseFloat(litrosInput);
+    const precoPorLitro = precos[tipo];
 
     calcularAbastecimento(precoPorLitro, litros);
 };
 
-const selectCombustivel = document.getElementById("combustivel");
+const btnCalcular = document.getElementById("btnCalcular");
+btnCalcular.addEventListener("click", atualizarValor);
+
 const inputLitros = document.getElementById("litros");
 
-selectCombustivel.addEventListener("change", atualizarValor);
-inputLitros.addEventListener("input", atualizarValor);
+inputLitros.addEventListener("input", () => {
+    if (inputLitros.value < 0) {
+        inputLitros.value = "";
+    }
+});
 
 inputLitros.addEventListener("keydown", (event) => {
+    if (event.key === "-" || event.key === "+") {
+        event.preventDefault();
+    }
+    
     if (event.key === "Enter") {
         event.preventDefault();
         atualizarValor();
