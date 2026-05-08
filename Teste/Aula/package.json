@@ -1,0 +1,14 @@
+{
+  "name": "projeto1",
+  "version": "1.0.0",
+  "description": "projeto1 utilizando o node e express",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Maria",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
