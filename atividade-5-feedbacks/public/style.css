@@ -1,0 +1,92 @@
+/* Configurações gerais da página */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e3f2fd; /* Azul claro */
+    color: #333;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+}
+
+h1 {
+    color: #1565c0;
+    text-align: center;
+}
+
+/* Caixa branca para dar destaque ao conteúdo */
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Estilo dos campos de texto */
+input[type="text"], textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box; /* Garante que o padding não quebre a largura */
+    font-family: inherit;
+}
+
+/* Estilo dos Botões e Links com cara de botão */
+button, .btn {
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none; /* Tira o sublinhado do link */
+    display: block;
+    text-align: center;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, .btn:hover {
+    background-color: #115293;
+}
+
+/* Botão de remover (vermelho e menor) */
+.btn-remover {
+    background-color: #e53935;
+    padding: 8px 12px;
+    font-size: 14px;
+    width: auto; /* Não ocupa a linha toda */
+}
+
+.btn-remover:hover {
+    background-color: #b71c1c;
+}
+
+/* Estilo da lista de feedbacks */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #f8f9fa;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 5px solid #1976d2;
+    display: flex;
+    justify-content: space-between; /* Texto de um lado, botão do outro */
+    align-items: center;
+}
+
+.feedback-texto {
+    padding-right: 15px;
+}
